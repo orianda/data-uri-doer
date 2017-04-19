@@ -1,0 +1,6 @@
+{
+    "extends": "../.jshintrc",
+    "newcap": false,
+    "mocha": true,
+    "globals": {}
+}

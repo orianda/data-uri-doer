@@ -1,0 +1,43 @@
+{
+  "name": "data-uri-doer",
+  "version": "1.0.0",
+  "description": "Encode and decode data uris.",
+  "homepage": "https://github.com/orianda/data-uri-doer",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "gulp build",
+    "test": "node node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orianda/data-uri-doer.git"
+  },
+  "keywords": [
+    "data",
+    "uri",
+    "doer"
+  ],
+  "author": "Orianda <orianda@paan.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orianda/data-uri-doer/issues"
+  },
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-gzip": "^1.4.0",
+    "gulp-header": "^1.8.8",
+    "gulp-help": "^1.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "jshint": "^2.9.4",
+    "run-sequence": "^1.2.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
