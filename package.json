@@ -1,6 +1,6 @@
 {
   "name": "data-uri-doer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Encode and decode data uris.",
   "homepage": "https://github.com/orianda/data-uri-doer",
   "main": "src/index.js",
