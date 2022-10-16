@@ -1,5 +1,5 @@
 import {expect} from "chai";
-import {DataUriDoerAttr} from "../src";
+import {DataUriDoerAttr} from "./DataUriDoerAttr";
 
 describe('DataUriDoerAttr', () => {
 

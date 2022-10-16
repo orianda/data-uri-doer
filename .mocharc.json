@@ -7,6 +7,6 @@
     "ts-node/register",
     "source-map-support/register"
   ],
-  "spec": "test/**/*.ts",
+  "spec": "**/*.spec.ts",
   "ui": "bdd"
 }

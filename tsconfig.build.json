@@ -3,5 +3,8 @@
   "include": [
     "src",
     "types"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
   ]
 }

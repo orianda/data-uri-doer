@@ -1,8 +1,8 @@
 {
   "extends": "@tsconfig/node16-strictest-esm/tsconfig.json",
   "compilerOptions": {
-    "rootDir": "./",
-    "baseUrl": "./",
+    "rootDir": "./src",
+    "baseUrl": "./src",
     "outDir": "./build",
     "module": "CommonJS",
     "paths": {
