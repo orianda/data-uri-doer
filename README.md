@@ -8,65 +8,80 @@ Encode and decode data uris as specified in [RFC2397](https://tools.ietf.org/htm
 npm install data-uri-doer
 ```
 
+## Usage
+
+```typescript
+import {DataUriDoer} from "data-uri-doer";
+```
+
+or
+
+```javascript
+const {DataUriDoer} = require('data-uri-doer');
+```
+
 ## API
 
 ### Instance
 
 Initialize uri instance
 
-```javascript
-var data = '<p>Some data to encode.</p>';
-var type = 'text/html';
-var attr = {
+```typescript
+const data = '<p>Some data to encode.</p>';
+const type = 'text/html';
+const attr = {
   charset: 'UTF-8'
 };
-var dud = new DataUriDoer(data, type, attr);
+const dud = new DataUriDoer(data, type, attr);
 ```
 
 Access uri properties
 
-```javascript
-var data = dud.data;
+```typescript
+const data = dud.data;
 dud.data = data;
 ```
-```javascript
-var type = dud.type;
+```typescript
+const type = dud.type;
 dud.type = type;
 ```
-```javascript
-var attr = dud.attr;
+```typescript
+const attr = dud.attr;
 dud.attr = attr;
-var charset = dud.attr.charset;
+const charset = dud.attr.charset;
 dud.attr.charset = charset;
+const base64 = dud.attr.base64;
+dud.attr.base64 = base64;
 ```
 
 ### Converting
 
-Convert instance to string
+Convert instance to string uri
 
-```javascript
-var string = dud.toString()
+```typescript
+const dud = new DataUriDoer('data');
+const string = dud.toString();
 ```
 
-Convert instance to base64 string
+Convert instance to base64 string uri
 
-```javascript
-var base64 = dud.toString(true)
+```typescript
+const data = Buffer.from('data');
+const dud = new DataUriDoer(data);
+const base64 = dud.toString();
+```
+or
+```typescript
+const dud = new DataUriDoer('data', undefined, {base46: true});
+const base64 = dud.toString();
 ```
 
 ### Parsing
 
 Parse string
 
-```javascript
-var dud = DataUriDoer.parse(string)
-```
-
-Parse string using fallback mime type and charset,
-which will be used in case it is not specified by the data uri.
-
-```javascript
-var dud = DataUriDoer.parse(string, 'text/html', 'UTF-8')
+```typescript
+const dud = DataUriDoer.parse(string)
 ```
 
 ### Default mime type and charset
@@ -75,8 +90,8 @@ As specified in [RFC2397](https://tools.ietf.org/html/rfc2397) the default mime 
 
 During parsing, these values will be used as fallback if is not given:
   
-```javascript
-var dud = DataUriDoer.parse('data:,some%20data');
+```typescript
+const dud = DataUriDoer.parse('data:,some%20data');
 
 console.log(dud.data);          // -> data
 console.log(dud.mime);          // -> text/plain
@@ -85,8 +100,8 @@ console.log(dud.attr.charset);  // -> US-ASCII
 
 During converting, the default values will be removed:
  
-```javascript
-var dud = new DataUriDoer('some data', 'text/plain', {charset: 'US-ASCII'});
+```typescript
+const dud = new DataUriDoer('some data', 'text/plain', {charset: 'US-ASCII'});
 
 console.log(dud.toString());    // -> data:,some%20data
 ```
