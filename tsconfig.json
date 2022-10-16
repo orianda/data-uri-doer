@@ -1,0 +1,33 @@
+{
+  "extends": "@tsconfig/node16-strictest-esm/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "baseUrl": "./",
+    "outDir": "./build",
+    "module": "CommonJS",
+    "paths": {
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "types"
+    ],
+    "resolveJsonModule": false,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "**/*.js",
+    "**/*.ts"
+  ],
+  "exclude": [
+    ".idea",
+    ".nyc_output",
+    "coverage",
+    "build",
+    "node_modules",
+    "var"
+  ]
+}
