@@ -16,7 +16,8 @@
     "declarationMap": true,
     "sourceMap": true,
     "noImplicitAny": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "ignoreDeprecations": "5.0"
   },
   "include": [
     "**/*.js",

@@ -55,6 +55,6 @@ class DataUriDoer {
         return new DataUriDoer(this.data, this.type, this.attr.clone());
     }
 }
-exports.DataUriDoer = DataUriDoer;
 DataUriDoer.DEFAULT_TYPE = 'text/plain';
+exports.DataUriDoer = DataUriDoer;
 //# sourceMappingURL=DataUriDoer.js.map

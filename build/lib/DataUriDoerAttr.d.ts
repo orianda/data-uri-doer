@@ -1,6 +1,6 @@
-export interface DataUriDoerAttrValue extends Record<string, string | number | boolean | undefined> {
-    charset: string;
-    base64: boolean;
+export interface DataUriDoerAttrValue extends Readonly<Record<string, string | number | boolean | undefined>> {
+    readonly charset: string;
+    readonly base64: boolean;
 }
 export declare class DataUriDoerAttr {
     static DEFAULT_CHARSET: string;

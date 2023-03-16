@@ -13,13 +13,13 @@ class DataUriDoerAttr {
         return this.attr.charset;
     }
     set charset(charset) {
-        this.attr.charset = charset;
+        this.attr = { ...this.attr, charset };
     }
     get base64() {
         return this.attr.base64;
     }
     set base64(base64) {
-        this.attr.base64 = base64;
+        this.attr = { ...this.attr, base64 };
     }
     static parse(value) {
         const attr = value
@@ -76,6 +76,6 @@ class DataUriDoerAttr {
         return new DataUriDoerAttr({ ...this.attr });
     }
 }
-exports.DataUriDoerAttr = DataUriDoerAttr;
 DataUriDoerAttr.DEFAULT_CHARSET = 'US-ASCII';
+exports.DataUriDoerAttr = DataUriDoerAttr;
 //# sourceMappingURL=DataUriDoerAttr.js.map
