@@ -1,6 +1,6 @@
-export interface DataUriDoerAttrValue extends Record<string, string | number | boolean | undefined> {
-  charset: string;
-  base64: boolean;
+export interface DataUriDoerAttrValue extends Readonly<Record<string, string | number | boolean | undefined>> {
+  readonly charset: string;
+  readonly base64: boolean;
 }
 
 export class DataUriDoerAttr {
@@ -21,7 +21,7 @@ export class DataUriDoerAttr {
   }
 
   set charset(charset: string) {
-    this.attr.charset = charset;
+    this.attr = {...this.attr, charset};
   }
 
   get base64(): boolean {
@@ -29,7 +29,7 @@ export class DataUriDoerAttr {
   }
 
   set base64(base64: boolean) {
-    this.attr.base64 = base64;
+    this.attr = {...this.attr, base64};
   }
 
   static parse(value: string): DataUriDoerAttr {
@@ -37,7 +37,7 @@ export class DataUriDoerAttr {
       .split(';')
       .map((chunk) => chunk.trim())
       .filter((chunks) => !!chunks)
-      .reduce<DataUriDoerAttrValue>((attr, chunk) => {
+      .reduce<Record<string, string | number | boolean | undefined>>((attr, chunk) => {
         const [prefix, suffix] = chunk.split('=') as [prefix: string, suffix?: string];
         const name = decodeURIComponent(prefix);
         attr[name] = suffix ? decodeURIComponent(suffix) : true;

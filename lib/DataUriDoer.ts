@@ -1,9 +1,9 @@
 import {DataUriDoerAttr, DataUriDoerAttrValue} from "./DataUriDoerAttr";
 
 export interface DataUriDoerType {
-  data: Uint8Array | string;
-  type: string;
-  attr: DataUriDoerAttrValue;
+  readonly data: Uint8Array | string;
+  readonly type: string;
+  readonly attr: DataUriDoerAttrValue;
 }
 
 export class DataUriDoer {
